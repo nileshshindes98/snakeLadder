@@ -1,10 +1,4 @@
 public class SnakeLadder {
-
-    public static void main(String[] args) {
-        System.out.println("WELCOME TO THE SNAKE & LADDER GAME");
-
-    }
-
     int var0 = 0;
     int rollDie = 0;
 
@@ -18,10 +12,11 @@ public class SnakeLadder {
         int var0 = (int) (Math.random() * 3.0D + 1.0D);
         return var0;
     }
+
     public static int playTurn(int var0) {
         int var1 = rollDie();
         int var2 = optionValue();
-        switch(var2) {
+        switch (var2) {
             case 1:
                 System.out.println("No Play");
                 break;
@@ -46,4 +41,16 @@ public class SnakeLadder {
         System.out.println("Player position: " + var0);
         return var0;
     }
+    public static void playGame() {
+        for (int var0 = 0; var0 < 100; var0 = playTurn(var0)) {
+            System.out.println("-------------------------------");
+        }
+    }
+    public static void main(String[] var0) {
+        System.out.println("WELCOME TO THE SNAKE & LADDER GAME");
+        playGame();
+    }
 }
+
+
+
